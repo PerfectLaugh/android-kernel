@@ -17,3 +17,5 @@ RUN git config --global user.email "unknown@unknown.com" && \
   git config --global color.ui false
 
 RUN useradd -ms /bin/bash user
+
+USER user
