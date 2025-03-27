@@ -15,3 +15,5 @@ RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /usr/local/bin
 RUN git config --global user.email "unknown@unknown.com" && \
   git config --global user.name "Unknown" && \
   git config --global color.ui false
+
+RUN useradd -ms /bin/bash user
