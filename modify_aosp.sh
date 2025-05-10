@@ -1,5 +1,6 @@
 #!/bin/sh
 
+BASEDIR=$(dirname "$0")
 cd aosp || exit
 
 curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
@@ -14,3 +15,6 @@ cd ..
 rm ./android/abi_gki_protected_exports_*
 sed -i "s/\"\[uprobes\]\"/\"\[u\.probes\]\"/" kernel/events/uprobes.c
 git add -A && git commit -m "customizations"
+
+git apply "../$BASEDIR/jit-cache.patch"
+git add -A && git commit -m "remove jit-cache maps"

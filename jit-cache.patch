@@ -1,0 +1,55 @@
+commit f4e0f8215015544be10980756bbe12caad0a820c
+Author: PerfectLaugh <me@perfectlaugh.info>
+Date:   Sun May 11 00:45:56 2025 +0800
+
+    remove jit-cache maps
+
+diff --git a/fs/proc/task_mmu.c b/fs/proc/task_mmu.c
+index 9f09aa1127e0..1493581c32c3 100644
+--- a/fs/proc/task_mmu.c
++++ b/fs/proc/task_mmu.c
+@@ -273,6 +273,35 @@ static void show_vma_header_prefix(struct seq_file *m,
+ 	seq_putc(m, ' ');
+ }
+ 
++int custom_seq_path(struct seq_file *m, const struct path *path, const char *esc)
++{
++	char *buf;
++	size_t size = seq_get_buf(m, &buf);
++	int res = -1;
++
++	if (size) {
++		char *p = d_path(path, buf, size);
++		if (!IS_ERR(p)) {
++			char *end = mangle_path(buf, p, esc);
++			if (end)
++				res = end - buf;
++		}
++		if (strncmp(buf, "/memfd:jit-cache", 16) == 0 || strncmp(buf, "/memfd:jit-zygote-cache", 23) == 0) {
++			strncpy(buf, "[vdso]", size);
++			res = 7;
++		}
++	}
++
++	seq_commit(m, res);
++
++	return res;
++}
++
++int custom_seq_file_path(struct seq_file *m, struct file *file, const char *esc)
++{
++	return custom_seq_path(m, &file->f_path, esc);
++}
++
+ static void
+ show_map_vma(struct seq_file *m, struct vm_area_struct *vma)
+ {
+@@ -302,7 +331,7 @@ show_map_vma(struct seq_file *m, struct vm_area_struct *vma)
+ 	 */
+ 	if (file) {
+ 		seq_pad(m, ' ');
+-		seq_file_path(m, file, "\n");
++		custom_seq_file_path(m, file, "\n");
+ 		goto done;
+ 	}
+ 
