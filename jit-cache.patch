@@ -1,11 +1,11 @@
-commit f4e0f8215015544be10980756bbe12caad0a820c
+commit 6d778ec3fbe375ab3ac8387c0752543c75122d0e
 Author: PerfectLaugh <me@perfectlaugh.info>
-Date:   Sun May 11 00:45:56 2025 +0800
+Date:   Mon May 12 03:18:01 2025 +0800
 
     remove jit-cache maps
 
 diff --git a/fs/proc/task_mmu.c b/fs/proc/task_mmu.c
-index 9f09aa1127e0..1493581c32c3 100644
+index 9f09aa1127e0..f231f2e21376 100644
 --- a/fs/proc/task_mmu.c
 +++ b/fs/proc/task_mmu.c
 @@ -273,6 +273,35 @@ static void show_vma_header_prefix(struct seq_file *m,
@@ -27,7 +27,7 @@ index 9f09aa1127e0..1493581c32c3 100644
 +		}
 +		if (strncmp(buf, "/memfd:jit-cache", 16) == 0 || strncmp(buf, "/memfd:jit-zygote-cache", 23) == 0) {
 +			strncpy(buf, "[vdso]", size);
-+			res = 7;
++			res = 6;
 +		}
 +	}
 +
