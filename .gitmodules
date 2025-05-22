@@ -1,0 +1,4 @@
+[submodule "external/susfs4ksu"]
+	path = external/susfs4ksu
+	url = https://gitlab.com/simonpunk/susfs4ksu.git
+	branch = gki-android14-6.1
