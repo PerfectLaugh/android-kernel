@@ -2,7 +2,7 @@
 <manifest>
   <remote name="aosp"
     fetch="https://android.googlesource.com/" />
-  <default revision="android-gs-pantah-6.1-android16" remote="aosp" sync-j="4" />
+  <default revision="android-gs-lynx-6.1-android16" remote="aosp" sync-j="4" />
   <project path="aosp" name="kernel/common" groups="partner">
     <linkfile dest="common/build.config.constants" src="build.config.constants" />
     <linkfile dest="common/modules.bzl" src="modules.bzl" />
