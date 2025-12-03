@@ -88,8 +88,6 @@
     groups="partner" />
   <project path="private/google-modules/bluetooth/broadcom"
     name="kernel/google-modules/bluetooth/broadcom" groups="partner" />
-  <project path="private/google-modules/bluetooth/synaptics"
-    name="kernel/google-modules/bluetooth/synaptics" groups="partner" />
   <project path="private/google-modules/bluetooth/qcom" name="kernel/google-modules/bluetooth/qcom"
     groups="partner" />
   <project path="private/google-modules/bms" name="kernel/google-modules/bms" groups="partner" />
