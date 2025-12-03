@@ -105,8 +105,8 @@
     groups="partner" />
   <project path="private/google-modules/fingerprint/fpc"
     name="kernel/google-modules/fingerprint/fpc" groups="partner" />
-  <project path="private/google-modules/fingerprint/goodix/fps_touch_handler"
-    name="kernel/google-modules/fingerprint/goodix/fps_touch_handler" groups="partner" />
+  <project path="private/google-modules/fingerprint/goodix"
+    name="kernel/google-modules/fingerprint/goodix" groups="partner" />
   <project path="private/google-modules/fingerprint/qcom/qfs4008"
     name="kernel/google-modules/fingerprint/qcom/qfs4008" groups="partner" />
   <project path="private/google-modules/gps/broadcom/bcm47765"
