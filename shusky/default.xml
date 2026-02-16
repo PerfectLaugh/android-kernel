@@ -3,7 +3,7 @@
   <remote name="aosp"
     fetch="https://android.googlesource.com/" />
   <default revision="android-gs-shusky-6.1-android16" remote="aosp" sync-j="4" />
-  <project path="aosp" name="kernel/common" groups="partner" revision="debde51af0100be1930f060255ca5f6defd8a82e">
+  <project path="aosp" name="kernel/common" groups="partner">
     <linkfile dest="common/build.config.constants" src="build.config.constants" />
     <linkfile dest="common/modules.bzl" src="modules.bzl" />
   </project>

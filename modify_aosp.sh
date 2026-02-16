@@ -4,7 +4,7 @@ BASEDIR=$(dirname "$0")
 cd aosp || exit
 
 # KernelSU
-curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s 0b243c24ab6640ea1553c08066a2386456985a0d
+curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s 35d81627402fe9c4c056aa2769d60ac93627bca
 
 # UProbes
 sed -i "s/\"\[uprobes\]\"/\"\[u\.probes\]\"/" kernel/events/uprobes.c
