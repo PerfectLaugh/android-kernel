@@ -80,7 +80,7 @@
     <linkfile dest="build_comet.sh" src="build_comet.sh" />
     <linkfile dest=".d8.bazelrc" src="device.bazelrc" />
   </project>
-  <!-- <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" /> -->
+  <project path="private/google-modules/soc/gs" name="kernel/google-modules/soc/gs" groups="partner" />
   <project path="private/google-modules/amplifiers" name="kernel/google-modules/amplifiers"
     groups="partner" />
   <project path="private/google-modules/aoc" name="kernel/google-modules/aoc" groups="partner" />
